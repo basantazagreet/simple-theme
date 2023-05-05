@@ -5,7 +5,7 @@
             while (have_posts()):
                 the_post();
                 ?>
-                <?php get_template_part('template-parts/content', 'postinarchive') ?>
+                <?php the_content();?>
             <?php endwhile;
             ?>
         </div>

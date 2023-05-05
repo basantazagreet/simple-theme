@@ -1,30 +1,29 @@
-<?php get_header(); ?>
-<h2 class="archive_title">
-    Search Results:
-</h2>
+
+<?php
+/*
+Template Name: Company Template
+*/
+ ?>
+
+
+<?php get_header();?>
+
 <div class="container-flex">
-
-    <div class="main-container">
-
-        <?php if (have_posts()) {
+    <div class="main-container aside">
+        <h3>Call Us: 9779869047383</h3>
+        <?php if (have_posts()):
             while (have_posts()):
                 the_post();
                 ?>
-                <?php get_template_part('template-parts/content',get_post_format())?>
+                <h2><?php the_title();?></h2>
+                <p><?php the_content();?></p>
             <?php endwhile;
-            ?>
-
-            <?php
-        } else { ?>
-            <div class="no-posts-found">
-                <p>Sorry, No Posts Found</p>
-            </div>
-            <?php
-
-        }
+            ?><?php
+        endif; 
         wp_reset_postdata();
         ?>
-    </div>
+        </div>
+
     <div class="sidebar">
         <div class="sidebar-content">
             <h3>Sidebar Header</h3>
@@ -37,4 +36,8 @@
     </div>
 </div>
 
-<?php get_footer(); ?>
+
+
+
+
+<?php get_footer();?>
