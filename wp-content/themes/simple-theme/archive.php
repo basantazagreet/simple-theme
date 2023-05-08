@@ -1,31 +1,33 @@
-<?php get_header(); ?>
-<h2 class="archive_title"><?php echo get_the_archive_title()?></h2>
-<div class="container-flex">
-    
-    <div class="main-container">
-    
-        <?php if (have_posts()):
-            while (have_posts()):
-                the_post();
-                ?>
-                 <?php if(get_post_format()):?>
-                 <?php get_template_part('template-parts/content',get_post_format());?>
-                 <?php else: get_template_part('template-parts/content','standard');?>
-                    <?php endif;?>
-            <?php endwhile;
-            ?></div><?php
-        endif; 
-        wp_reset_postdata();
-        ?>
+<?php get_header() ?>
 
-    <div class="sidebar">
-        <?php if(is_active_sidebar('sidebar')):
-            dynamic_sidebar('sidebar');
-            
-        endif;
-            ?>
+<div class="ba-container">
+    <div class="ba-banner">
+        <h1 class="ba-banner-h1">Blog</h1>
+    </div>
+
+
+    <div class="ba-second-row">
+        <div class="ba-filter">
+            <label>Filter by Topics</label><br>
+            <select id="ba-filter-posts">
+            <option value="option1">All posts</option>
+            <option value="option2">Option 2</option>
+            <option value="option3">Option 3</option>
+            </select>
+        </div>
+        <div class="ba-search">
+            <label>Search blog posts</label><br>
+            <div class="ba-search-box">
+                <input type="text" placeholder="Search...">
+                <!-- <button type="submit"><i class="fa fa-search"></i></button> -->
+                <button type="submit"><span class="dashicons dashicons-search"></span></button>
+
+            </div>
+
+
+        </div>
 
     </div>
 </div>
 
-<?php get_footer(); ?>
+<?php get_footer() ?>
